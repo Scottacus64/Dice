@@ -14,34 +14,49 @@ void diceToRoll(string rollInput);
 
 int main()
 {   
-    Dice dieArray[5];                   // create the array of dice objects
+    Dice dieArray[5];                       // create the array of dice objects
+    bool again = true;
+    while (again == true)
+    {
+        rollInput = "12345";                // default rollInput so that all dice will be rolled the first time
+        int result[5];                      // create an array of roll results
 
-    rollInput = "12345";
-    int result[5];                      // create an array of roll results
+    
 
- 
-
-    for (int i=0; i<5; i++){            
-        Dice die(6);                    // populate the dieArray
-        dieArray[i] = die;              
-    }
-    for (int a=0; a<3; a++){
-        if (a>0)
-        {
-            cout << "Which dice do you want to re-roll?\n";
-            cin >> rollInput;
+        for (int i=0; i<5; i++){            
+            Dice die(6);                    // populate the dieArray
+            dieArray[i] = die;              
         }
-        diceToRoll(rollInput);
-        for (int i=0; i<5; i++){
-            for (int j = 0; j<5; j++){
-                if (parsedString[j] == i)
-                {
-                result[i] = dieArray[i].roll();
-                }
+        for (int a=0; a<3; a++){            // roll the dice three times
+            if (a>0)                        // every time but the first time ask which dice to re-roll
+            {
+                cout << "Which dice do you want to re-roll (enter \"q\" to stop rolling)?\n";
+                cin >> rollInput;
             }
-            
+            string test = "q";
+            if (rollInput == test)
+            {
+                break;
+            }
+            diceToRoll(rollInput);
+            for (int i=0; i<5; i++){
+                for (int j = 0; j<5; j++){
+                    if (parsedString[j] == i)
+                    {
+                    result[i] = dieArray[i].roll();
+                    }
+                }
+                
+            }
+            print(result);
         }
-        print(result);
+        cout << "Do you want to try again (y/n)?";
+        char inputChar;
+        cin >> inputChar;
+        if (inputChar == 'n' or inputChar == 'N')
+        {
+            again = false;
+        }
     }
     return 0;
 }
