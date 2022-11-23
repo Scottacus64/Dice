@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/scottmiller/VSC/Dice/build",
+  "command": "/usr/bin/clang++ -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -o CMakeFiles/Dice.dir/game.cpp.o -c /Users/scottmiller/VSC/Dice/game.cpp",
+  "file": "/Users/scottmiller/VSC/Dice/game.cpp"
+},
+{
+  "directory": "/Users/scottmiller/VSC/Dice/build",
+  "command": "/usr/bin/clang++ -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -o CMakeFiles/Dice.dir/Dice.cpp.o -c /Users/scottmiller/VSC/Dice/Dice.cpp",
+  "file": "/Users/scottmiller/VSC/Dice/Dice.cpp"
+}
+]
